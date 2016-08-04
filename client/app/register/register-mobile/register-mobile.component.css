@@ -1,0 +1,131 @@
+button {
+  text-transform: uppercase; }
+
+.blackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.8; }
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+@media only screen and (min-width: 48em) {
+  .container {
+    top: 50%;
+    left: 50%;
+    right: initial;
+    bottom: initial;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 700px;
+    max-height: 90%; } }
+
+.message-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2; }
+  .message-container .message-blackdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.8; }
+  .message-container .message-content {
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    text-align: center;
+    padding: 16px; }
+    .message-container .message-content md-icon {
+      width: 56px;
+      height: 56px;
+      font-size: 56px; }
+  .message-container .message-actions {
+    padding: 10px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse; }
+  .message-container .message-wrapper {
+    position: absolute;
+    width: 300px;
+    min-height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    border-radius: 5px; }
+  @media only screen and (min-width: 48em) {
+    .message-container .message-wrapper {
+      width: 460px;
+      min-height: 60px; } }
+  .message-container .message-item {
+    margin-bottom: 10px; }
+  .message-container .errors {
+    color: red; }
+  .message-container .notifications {
+    color: green; }
+
+md-toolbar md-icon {
+  cursor: pointer; }
+
+md-toolbar .fill-remaining {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto; }
+
+.content {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+  background: white;
+  border-top: 1px solid #E0E0E0;
+  overflow-y: auto;
+  overflow-x: hidden; }
+  .content .end-tip {
+    padding: 16px;
+    border-bottom: 1px solid #E0E0E0; }
+  .content .form-section {
+    margin: 16px;
+    padding: 0; }
+    .content .form-section md-card-content {
+      padding: 16px; }
+    .content .form-section .full-width {
+      width: 100%; }
+    .content .form-section md-input {
+      overflow: visible; }
+    .content .form-section .validation-error {
+      color: red; }
+    .content .form-section .unavailable {
+      color: gray; }
+      .content .form-section .unavailable md-checkbox {
+        text-decoration: line-through; }
+
+.footer {
+  background: white;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding: 10px 0; }
+  .footer button {
+    width: 80%;
+    position: relative; }

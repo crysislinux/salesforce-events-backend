@@ -1,0 +1,58 @@
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.row-kill-margins {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.main-spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.main-spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.main-spinner .bounce1 {
+  animation-delay: -0.32s;
+}
+
+.main-spinner .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+  } 40% {
+    transform: scale(1.0);
+  }
+}
+
+body.modal-opened {
+  overflow: hidden;
+}

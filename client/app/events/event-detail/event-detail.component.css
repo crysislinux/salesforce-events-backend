@@ -1,0 +1,55 @@
+button {
+  text-transform: uppercase; }
+
+md-card-title-group img {
+  width: 70px;
+  height: 70px; }
+
+:host .description img {
+  max-width: 100%; }
+
+.event-content md-card {
+  margin-bottom: 16px; }
+
+.event-content .meta-info {
+  line-height: 1.5em;
+  margin-bottom: 1em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid #acacac; }
+
+.event-content .registration-limit {
+  margin-right: 1.2em; }
+
+.event-content .description {
+  line-height: 1.3em; }
+
+.event-content .sessions .meta-info {
+  border-bottom: none; }
+
+.event-content .sessions h2 {
+  margin: 0;
+  padding: 24px;
+  font-weight: normal;
+  margin-bottom: 16px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); }
+
+.event-content .register-button {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  .event-content .register-button button {
+    margin: 16px 0;
+    width: 50%; }
+
+.event-content .spinner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-top: 100px; }
+
+.event-content .error {
+  width: 300px;
+  margin: 60px auto;
+  text-align: center; }

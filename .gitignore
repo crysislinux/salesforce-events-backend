@@ -1,0 +1,4 @@
+node_modules/
+/test.js
+/config/env.dev.js
+/config/env.prod.js

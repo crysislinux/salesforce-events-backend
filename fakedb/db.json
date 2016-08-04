@@ -1,0 +1,93 @@
+{
+  "events": [
+    {
+      "Id": 11,
+      "Title__c": "React Native Con",
+      "Description__c": "<p>You can also do this in Angular 1, using <em>component directives</em>. These are directives that define their own templates, controllers, and input/output bindings - the same things that Angular 2 components define. Applications built with component directives are much easier to migrate to Angular 2 than applications built with lower-level features like <code>ng-controller</code>,  <code>ng-include</code>, and scope inheritance.</p>",
+      "Start__c": "2016-07-19",
+      "End__c": "2016-07-23",
+      "Status__c": "Open",
+      "Registration_Limit__c": 23,
+      "Remaining_Seats__c": 5,
+      "Sessions__r": [
+        {
+          "Id": 1,
+          "Title__c": "What is React Native",
+          "Start__c": "2016-07-19",
+          "End__c": "2016-07-23",
+          "Status__c": "Open",
+          "Registration_Limit__c": 23,
+          "Remaining_Seats__c": 5
+        },
+        {
+          "Id": 2,
+          "Title__c": "Relationship to React",
+          "Start__c": "2016-07-19",
+          "End__c": "2016-07-23",
+          "Status__c": "Open",
+          "Registration_Limit__c": 23,
+          "Remaining_Seats__c": 5
+        },
+        {
+          "Id": 3,
+          "Title__c": "Why do we need React Native",
+          "Start__c": "2016-07-19",
+          "End__c": "2016-07-23",
+          "Status__c": "Open",
+          "Registration_Limit__c": 23,
+          "Remaining_Seats__c": 5
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "Title__c": "Angular 2 Con",
+      "Description__c": "placehoder",
+      "Start__c": "2016-07-19",
+      "End__c": "2016-07-23",
+      "Status__c": "Open",
+      "Registration_Limit__c": 23,
+      "Remaining_Seats__c": 5
+    },
+    {
+      "Id": 13,
+      "Title__c": "React European",
+      "Description__c": "placehoder",
+      "Start__c": "2016-07-19",
+      "End__c": "2016-07-23",
+      "Status__c": "Open",
+      "Registration_Limit__c": 23,
+      "Remaining_Seats__c": 5
+    },
+    {
+      "Id": 14,
+      "Title__c": "Angular Reactive",
+      "Description__c": "placehoder",
+      "Start__c": "2016-07-19",
+      "End__c": "2016-07-23",
+      "Status__c": "Open",
+      "Registration_Limit__c": 23,
+      "Remaining_Seats__c": 5
+    },
+    {
+      "Id": 15,
+      "Title__c": "Reactive",
+      "Description__c": "placehoder",
+      "Start__c": "2016-07-19",
+      "End__c": "2016-07-23",
+      "Status__c": "Open",
+      "Registration_Limit__c": 23,
+      "Remaining_Seats__c": 5
+    },
+    {
+      "Id": 16,
+      "Title__c": "Ember Con",
+      "Description__c": "placehoder",
+      "Start__c": "2016-07-19",
+      "End__c": "2016-07-23",
+      "Status__c": "Open",
+      "Registration_Limit__c": 23,
+      "Remaining_Seats__c": 5
+    }
+  ]
+}

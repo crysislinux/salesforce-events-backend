@@ -1,0 +1,59 @@
+<div class="event-content">
+  <div class="row row-kill-margins" *ngIf="event">
+    <div class="col-xs-12 col-md-6">
+      <md-card>
+        <md-card-title-group>
+          <md-card-title>{{event.title}}</md-card-title>
+          <md-card-subtitle>{{ts.date(event.start)}} - {{ts.date(event.end)}}</md-card-subtitle>
+          <div [ngSwitch]="event.status">
+            <template [ngSwitchCase]="'Open'"><img md-card-md-image src="/app/assets/img/open.png"></template>
+            <template [ngSwitchCase]="'Sold Out'"><img md-card-md-image src="/app/assets/img/sold-out.png"></template>
+            <template [ngSwitchCase]="'Closed'"><img md-card-md-image src="/app/assets/img/closed.png"></template>
+          </div>
+        </md-card-title-group>
+        <md-card-content>
+          <div class="meta-info">
+            <div>
+              Status: {{event.status}}
+            </div>
+            <div>
+              <span class="registration-limit">Registration Limit: {{event.registrationLimit}}</span>
+              <span class="remaning-seats">Remaining Seats: {{event.remainingSeats}}</span>
+            </div>
+          </div>
+          <div class="description" [innerHTML]="event.description"></div>
+        </md-card-content>
+      </md-card>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="sessions">
+        <h2>SESSIONS</h2>
+        <md-card *ngFor="let session of event.sessions">
+          <md-card-title>{{session.title}}</md-card-title>
+          <md-card-subtitle>{{ts.date(session.start)}} - {{ts.date(session.end)}}</md-card-subtitle>
+          <md-card-content>
+            <div class="meta-info">
+              <div>
+                Status: {{session.status}}
+              </div>
+              <div>
+                <span class="registration-limit">Registration Limit: {{session.registrationLimit}}</span>
+                <span class="remaning-seats">Remaining Seats: {{session.remainingSeats}}</span>
+              </div>
+            </div>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div class="register-button">
+        <button md-raised-button color="primary" (click)="register.open()" [disabled]="event.status!='Open'">Register</button>
+      </div>
+    </div>
+  </div>
+  <div class="spinner" *ngIf="loading">
+      <md-spinner></md-spinner>
+  </div>
+  <div class="error" *ngIf="hasError">
+      Oops... Something wrong, please check the URL and try again later.
+  </div>
+</div>
+<bt-register-mobile #register [event]="event" (onRegisterSuccess)="onRegisterSuccess($event)"></bt-register-mobile>

@@ -1,0 +1,92 @@
+<div *ngIf="available">
+  <div class="blackdrop">
+
+  </div>
+  <form class="container" [formGroup]="form" (ngSubmit)="submit(form.value)">
+    <md-toolbar>
+      <span class="page-title">Register</span>
+      <span class="fill-remaining"></span>
+      <button type="button" md-icon-button (click)="close()">
+        <md-icon >close</md-icon>
+      </button>
+    </md-toolbar>
+    <div class="content">
+      <div class="end-tip">
+        Sales end on {{ts.date(event.end)}}
+      </div>
+      <md-card class="form-section sessions">
+        <md-toolbar color="primary">Choose sessions to join in</md-toolbar>
+        <md-card-content>
+          <div *ngFor="let session of event.sessions">
+            <div [class.unavailable]="session.status!='Open'">
+              <md-checkbox [formControl]="form.controls.sessions.controls[session.id]" [disabled]="session.status=='Sold Out'">{{session.title}}</md-checkbox>
+            </div>
+          </div>
+          <div class="validation-error" [hidden]="form.controls.sessions.valid || form.controls.sessions.pristine">
+            Should choose at least one session.
+          </div>
+        </md-card-content>
+      </md-card>
+      <md-card class="form-section personal-info">
+        <md-toolbar color="primary">Your Information</md-toolbar>
+        <md-card-content>
+
+            <table style="width: 100%" cellspacing="0">
+              <tr>
+                <td>
+                  <md-input [formControl]="form.controls.firstName" placeholder="First Name" style="width: 100%">
+                    <md-hint class="validation-error" [hidden]="form.controls.firstName.valid || form.controls.firstName.pristine" >First Name is required</md-hint>
+                  </md-input>
+                </td>
+                <td>
+                  <md-input [formControl]="form.controls.lastName" placeholder="Last Name" style="width: 100%">
+                    <md-hint class="validation-error" [hidden]="form.controls.lastName.valid || form.controls.lastName.pristine" >Last Name is required</md-hint>
+                  </md-input>
+                </td>
+              </tr>
+            </table>
+            <md-input [formControl]="form.controls.email" class="full-width" placeholder="Email">
+              <md-hint class="validation-error" [hidden]="form.controls.email.valid || form.controls.email.pristine" >Email is required</md-hint>
+            </md-input>
+            <md-input [formControl]="form.controls.phone" class="full-width" placeholder="Phone">
+              <md-hint class="validation-error" [hidden]="form.controls.phone.valid || form.controls.phone.pristine" >Phone is required</md-hint>
+            </md-input>
+            <md-input [formControl]="form.controls.company" class="full-width" placeholder="Company">
+              <md-hint class="validation-error" [hidden]="form.controls.company.valid || form.controls.company.pristine" >Company is required</md-hint>
+            </md-input>
+
+        </md-card-content>
+      </md-card>
+    </div>
+    <div class="footer">
+      <button type="submit" md-raised-button color="primary" [disabled]="submitting || !form.valid">{{buttonText}}</button>
+    </div>
+    <div class="message-container" *ngIf="hasMessage">
+      <div class="message-blackdrop"></div>
+      <div class="message-wrapper errors" *ngIf="errors.length > 0">
+        <div class="message-content">
+          <md-icon>highlight_off</md-icon>
+          <div *ngFor="let error of errors" class="message-item">
+            <div>
+              {{error}}
+            </div>
+          </div>
+        </div>
+        <div class="message-actions">
+          <button type="button" md-raised-button color="primary" (click)="clearMessages()">Close</button>
+        </div>
+      </div>
+      <div class="message-wrapper notifications" *ngIf="notifications.length > 0">
+        <div class="message-content">
+          <md-icon>done</md-icon>
+          <div *ngFor="let notification of notifications" class="message-item">
+            {{notification}}
+          </div>
+        </div>
+        <div class="message-actions">
+          <button type="button" md-raised-button color="primary" (click)="clearMessages()">Close</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

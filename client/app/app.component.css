@@ -1,0 +1,16 @@
+md-toolbar {
+  margin-bottom: 20px; }
+  md-toolbar a {
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    color: white; }
+
+.site-content {
+  margin-bottom: 20px; }
+
+@media only screen and (min-width: 75em) {
+  .site-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; } }

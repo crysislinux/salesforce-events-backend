@@ -1,0 +1,34 @@
+<div class="event-list">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let event of events">
+      <md-card (click)="gotoDetail(event)">
+        <md-card-title-group>
+          <md-card-title>{{event.title}}</md-card-title>
+          <md-card-subtitle>{{ts.date(event.start)}} - {{ts.date(event.end)}}</md-card-subtitle>
+          <div [ngSwitch]="event.status">
+            <template [ngSwitchCase]="'Open'"><img md-card-md-image src="/app/assets/img/open.png"></template>
+            <template [ngSwitchCase]="'Sold Out'"><img md-card-md-image src="/app/assets/img/sold-out.png"></template>
+            <template [ngSwitchCase]="'Closed'"><img md-card-md-image src="/app/assets/img/closed.png"></template>
+          </div>
+        </md-card-title-group>
+        <md-card-content>
+          <div>
+            Stauts: {{event.status}}
+          </div>
+          <div>
+            <span class="registration-limit">Registration Limit: {{event.registrationLimit}}</span>
+            <span class="remaning-seats">Remaining Seats: {{event.remainingSeats}}</span>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+    <div class="col-xs-12" *ngIf="loading">
+      <md-spinner [class.load-more]="events"></md-spinner>
+    </div>
+    <div class="col-xs-12" *ngIf="showLoadMoreButton">
+      <div class="load-more">
+        <button md-raised-button [disabled]="!hasNextPage || loading" (click)="loadNextPage()">{{loadMoreButtonText}}</button>
+      </div>
+    </div>
+  </div>
+</div>
